@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://OneProdEx1.netlify.app/sitemap.xml
+Sitemap:https://oneprodex1.netlify.app/sitemap.xml
+
