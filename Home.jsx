@@ -97,7 +97,7 @@ export default function Home() {
       try {
         setMongoError(null);
         
-        const productsResponse = await axios.get("http://localhost:7000/api/products");
+        const productsResponse = await axios.get("https://oneprodex.up.railway.app/api/products");
         let productsData = [];
         
         if (Array.isArray(productsResponse.data)) {
@@ -116,7 +116,7 @@ export default function Home() {
           setMongoProducts(productsData);
         }
         
-        const categoriesResponse = await axios.get("http://localhost:7000/api/categories");
+        const categoriesResponse = await axios.get("https://oneprodex.up.railway.app/api/categories");
         let categoriesData = [];
         
         if (Array.isArray(categoriesResponse.data)) {
@@ -1434,4 +1434,5 @@ export default function Home() {
       </style>
     </div>
   );
+
 }
