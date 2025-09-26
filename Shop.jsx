@@ -770,7 +770,7 @@ export default function Shop() {
   // دالة التحقق من اتصال الخادم
   const checkServerConnection = useCallback(async () => {
     try {
-      await axios.get("http://localhost:7000/api/health", { timeout: 5000 });
+      await axios.get("https://oneprodex.up.railway.app/api/health", { timeout: 5000 });
       setIsOnline(true);
       return true;
     } catch (error) {
@@ -836,7 +836,7 @@ export default function Shop() {
       const isConnected = await checkServerConnection();
       if (!isConnected) return [];
 
-      const response = await axios.get("http://localhost:7000/api/categories", { 
+      const response = await axios.get("https://oneprodex.up.railway.app/api/categories", { 
         timeout: 10000 
       });
       
@@ -877,7 +877,7 @@ export default function Shop() {
         return;
       }
 
-      const response = await axios.get("http://localhost:7000/api/products", { 
+      const response = await axios.get("https://oneprodex.up.railway.app/api/products", { 
         timeout: 10000 
       });
       
@@ -956,7 +956,7 @@ export default function Shop() {
       try {
         setError(null);
         
-        const productsResponse = await axios.get("http://localhost:7000/api/products", { timeout: 10000 });
+        const productsResponse = await axios.get("https://oneprodex.up.railway.app/api/products", { timeout: 10000 });
         let productsData = [];
         
         if (Array.isArray(productsResponse.data)) {
@@ -973,7 +973,7 @@ export default function Shop() {
           setLastUpdate(new Date());
         }
         
-        const categoriesResponse = await axios.get("http://localhost:7000/api/categories", { timeout: 10000 });
+        const categoriesResponse = await axios.get("https://oneprodex.up.railway.app/api/categories", { timeout: 10000 });
         let categoriesData = [];
         
         if (Array.isArray(categoriesResponse.data)) {
@@ -2066,6 +2066,7 @@ export default function Shop() {
 
 
   
+
 
 
 
