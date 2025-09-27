@@ -1253,7 +1253,7 @@ export default function Log() {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "https//oneprodex3.up.railway.app/api/auth/google";
+    window.location.href =  "http://localhost:7000/api/auth/google";
   };
 
   // ---- BACKGROUND SPLIT DESIGN ----
