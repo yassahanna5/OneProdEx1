@@ -1025,7 +1025,7 @@ export default function AdminDashboard() {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get("https://oneprodex.up.railway.app/api/products");
+      const { data } = await axios.get("oneprodex3.up.railway.app/api/products");
       setProducts(data.products || data);
     } catch (err) {
       console.error("Error fetching products:", err);
@@ -1038,7 +1038,7 @@ export default function AdminDashboard() {
   const fetchCategories = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get("https://oneprodex.up.railway.app/api/categories");
+      const { data } = await axios.get("oneprodex3.up.railway.app/api/categories");
       setCategories(data.categories || data);
     } catch (err) {
       console.error("Error fetching categories:", err);
@@ -1056,7 +1056,7 @@ export default function AdminDashboard() {
     }
 
     try {
-      const { data } = await axios.post("https://oneprodex.up.railway.app/api/products", editingProduct);
+      const { data } = await axios.post("oneprodex3.up.railway.app/api/products", editingProduct);
       setProducts([...products, data.product || data]);
       setEditingProduct(null);
       showNotification("Product added successfully");
@@ -1109,7 +1109,7 @@ export default function AdminDashboard() {
     }
 
     try {
-      const { data } = await axios.post("https://oneprodex.up.railway.app/api/categories", editingCategory);
+      const { data } = await axios.post("oneprodex3.up.railway.app/api/categories", editingCategory);
       
       if (data.success) {
         setCategories([...categories, data.category]);
@@ -1133,7 +1133,7 @@ export default function AdminDashboard() {
 
     try {
       const { data } = await axios.put(
-        `https://oneprodex.up.railway.app/api/categories/${editingCategory._id}`,
+        `oneprodex3.up.railway.app/api/categories/${editingCategory._id}`,
         editingCategory
       );
       
@@ -1154,7 +1154,7 @@ export default function AdminDashboard() {
   const handleDeleteCategory = async (id) => {
     if (window.confirm("Are you sure you want to delete this category?")) {
       try {
-        const { data } = await axios.delete(`https://oneprodex.up.railway.app/api/categories/${id}`);
+        const { data } = await axios.delete(`oneprodex3.up.railway.app/api/categories/${id}`);
         
         if (data.success) {
           setCategories(categories.filter((c) => c._id !== id));
@@ -2287,3 +2287,4 @@ export default function AdminDashboard() {
   );
 
 }   
+
